@@ -1,0 +1,11 @@
+FROM golang:1.18
+
+WORKDIR /usr/src/app
+
+COPY /src/app /usr/src/app
+
+RUN go mod init goapp && go build -o goapp
+
+ENTRYPOINT ./goapp
+
+
